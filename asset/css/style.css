@@ -1,0 +1,930 @@
+* {
+margin: 0;
+padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+a:focus {
+  outline: none;
+
+}
+
+/*body {
+    background-image: url('../Logo_Not_A_dead_end_01.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}*/
+.bg {
+  overflow-y: hidden;
+  position: absolute;
+  z-index: -99;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  min-height: 100%;
+  min-width: 100%;
+}
+
+.bg img {
+  margin-right: -2em;
+  margin-top: 2em;
+  margin-bottom: -1em;
+  opacity: 0.7;
+  width: 300px;
+/*  width: 100vw;
+  height: 100vh;*/
+  /*min-width: 100%;*/
+  /*min-height: 100%;*/
+}
+
+.logo-login img, .logo-register img {
+  margin-top: 2em !important;
+  width: 85% !important;
+  opacity: 0.4 !important;
+}
+
+
+h3 {
+	color: #171717;
+	text-shadow: 2px 2px 1px grey;
+	letter-spacing: 2px;
+}
+
+video {
+  display: block;
+  position: fixed;
+  z-index: -100;
+	/*margin-left: -1em;*/
+	/*margin-right: -1em;*/
+	/*margin-bottom: -1em;*/
+	min-width: 100%;
+	min-height: 100%;
+	
+}
+
+#video {
+  position: relative !important;
+  z-index: 5 !important;
+  width: 425px !important;
+  height: 300px !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+}
+
+@font-face {
+        font-family: "Font Argon Personal";
+        src: url('../font/ArgonPERSONAL-Regular.otf');
+    }
+
+@font-face {
+        font-family: "Font Linee Demo";
+        src: url('../font/Linee-DEMO.otf');
+    }
+
+
+.tombol-start {
+  top: 45vh;
+	position: absolute;
+	/*z-index: 10;*/
+	font-size: 1.5em;
+  font-family: "Font Argon Personal";
+	/*padding: 0.3em 1em;*/
+	border-radius: 1rem;
+}
+
+.tombol-start:focus {
+  border-radius: 30px !important;
+}
+
+.tombol-new {
+  width: 9em !important;
+}
+
+/*.btn-outline-warning:focus {
+    border-radius: 40px;
+}*/
+
+.btn-outline-warning {
+  border-radius: 20px;
+  font-size: 1.5em;
+}
+
+.tombol-start:hover {
+	color: #F39C12;
+	background-color: #D7DBDD;
+	opacity: 100%;
+	border: 3px solid #F39C12;
+	transform: scale(1.1);
+	transition: 0.5s;
+}
+
+.home, .user-home {
+	position: absolute;
+	top: 0.2em;
+	z-index: 11;
+	color: #E74C3C;
+	font-size: 2rem;
+}
+
+.btn-warning:focus {
+  border-radius: 10px;
+}
+
+#start {
+  left: 50%;
+  margin-left: -120px;
+}
+
+
+
+.login-home {
+ 
+	position: absolute;
+	top: 0.2em;
+	left: 0.5em;
+	z-index: 11;
+	color: #ffa726;
+	font-size: 2rem;
+}
+
+.login-home span, .kembali span, .login-about span {
+    font-family: "Font Argon Personal";
+}
+
+
+.home:hover, .user-home:hover, .user-about:hover, .user-kembali:hover, .login-home:hover, .login-about:hover, .kembali:hover {
+	color: #2196F3;
+	text-shadow: 1px 1px 4px #2196F3;
+}
+
+
+.about, .user-about {
+	position: absolute;
+	top: 0.2em;
+	z-index: 12;
+	color: #E74C3C;
+	font-size: 2rem;
+	right: 0.5em;
+}
+
+
+.about span, .home span, .user-about span, .user-kembali span, .user-home span {
+  font-family: "Font Argon Personal";
+}
+
+
+.login-about {
+  position: absolute;
+  top: 0.2em;
+  z-index: 12;
+  color: #ffa726;
+  font-size: 2rem;
+  right: 0.5em;
+}
+
+.about:hover {
+	color: #2196F3;
+	text-shadow: 1px 1px 4px #2196F3;
+}
+
+  .karakter-kembali:hover  {
+	color: #17202A;
+	text-shadow: 1px 1px 4px #17202A;
+}
+
+.user-kembali {
+	position: absolute;
+	top: 0.3em;
+  left: 50%;
+	margin-left: -2.3em;
+	font-size: 2rem;
+	color: #E74C3C;
+
+}
+
+.kembali {
+  position: absolute;
+  left: 50%;
+  top: 0.2em;
+  margin-left: -2.3em;
+  font-size: 2rem;
+  color: #ffa726;
+}
+
+
+
+.karakter-kembali {
+	/*position: absolute;*/
+	font-size: 2rem;
+	top: 0.5em;
+	color: #E74C3C;
+	
+}
+
+.karakter-kembali2 {
+	visibility: hidden;
+}
+
+/*.tengah {
+  position: fixed;
+  z-index: -100;
+  min-width: 100%;
+  min-height: 100%;
+  top: -0.5em;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}*/
+
+.login, .register {
+  font-family: "Font Argon Personal";
+  text-align: center;
+  color: #ffa726;
+  background-color: transparent;
+	font-size: 2rem;
+	padding: 1em 2em;
+	border-radius: 2rem;
+	width: 7em;
+	transition: box-shadow .3s;
+}
+
+.register span {
+  margin-left: -0.5em;
+}
+
+.login:hover, .register:hover {
+	color: #FFA726;
+	background-color: rgba(253, 254, 254, 0.5);
+	border: 3px solid #FFA726;
+	box-shadow: 0 0 13px rgba(33,33,33,.4);
+}
+
+
+.button {
+	background-color: transparent;
+	border-radius: 30px;
+/*	box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 100px 80px rgba(0, 0, 0, 0.12);*/
+}
+
+
+@media (min-width: 768px) {
+  .gradient-form {
+    height: 100vh !important;
+  }
+}
+@media (min-width: 769px) {
+  .gradient-custom-2 {
+    border-top-right-radius: .3rem;
+    border-bottom-right-radius: .3rem;
+  }
+}
+
+.form-control:active,
+.form-control:focus,
+.form-control:focus:active {
+  background-color: #e0e0e0 !important;
+  /*border-color: red !important;*/
+  /*color: black !important;*/
+}
+
+.form-control {
+	color: black !important;
+}
+
+form input, select {
+  height: 45px !important;
+}
+
+.form-check input {
+  height: 20px !important;
+}
+
+.form-control-sm {
+  margin-top: -1em;
+  height: 30px !important;
+}
+
+.box {
+	background-color: #b0bec5;
+	margin-right: -0.7em;
+	margin-left: -1em;
+}
+
+.card-login {
+	background-color: transparent;
+	margin-top: 1.5em;
+
+}
+
+.card-register {
+  margin-top: -1em;
+	background-color: transparent;
+
+}
+
+.btn-login {
+	background-color: #ffc107;
+}
+
+
+.karakter {
+	background-color: #b0bec5;
+}
+
+.logout {
+	font-size: 2rem !important;
+	color: black;
+	position: absolute;
+	transform: translate(100px, 100px);
+}
+
+
+.kotak-karakter {
+	width: 58vw;
+	/*margin-left: 21vw;*/
+	/*margin-top: 11em;*/
+
+}
+
+.card-karakter {
+  border-bottom-right-radius: 50px;
+  border-bottom-left-radius: 50px;
+	overflow: visible;
+	border: 1px solid black;
+	background-color: #ffa726;
+	cursor: pointer;
+}
+
+.fokus:focus {
+  border: 2px solid white;
+  border-radius: 10px;
+}
+
+.fokus.user:focus {
+  border: 3px solid white !important;
+  border-radius: 40px !important;
+}
+
+.fokus {
+  text-decoration: none;
+}
+
+/*#about:focus {
+  border: 3px solid black;
+  background-color: black !important;
+}*/
+
+.card-body .card-title {
+  color: whitesmoke;
+}
+
+.kotak-register {
+  height: 34em !important;
+}
+
+.kotak-login {
+  height: 30em;
+}
+
+.card-body {
+  background-color: rgb(52, 152, 219, 0.5);
+  border-radius: 10px;
+}
+
+.card-karakter .card-body {
+  background-color: #2980B9;
+  border-radius: 10px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.card-karakter:hover {
+	 -webkit-transform: scale(1.1);
+   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+
+.tooltip {
+  visibility: hidden;
+  z-index: 100;
+  opacity: .40;
+  
+  width: 100%;
+  padding: 0px 20px;
+
+  background: #333;
+  color: #FDFEFE ;
+  
+  position: absolute;
+  top: 62%;
+  
+
+  border-radius: 9px;
+  font-size: 1rem;
+  text-align: center;
+
+  transform: translateY(9px);
+  transition: all 0.3s ease-in-out;
+  
+  box-shadow: 0 0 3px rgba(56, 54, 54, 0.86);
+}
+
+.card-karakter:hover .tooltip{
+  visibility: visible;
+  transform: translateY(-10px);
+  opacity: 1;
+    transition: .3s linear;
+  animation: odsoky 1s ease-in-out infinite  alternate;
+
+}
+
+.kotak-karakter .fokus:focus .tooltip {
+  visibility: visible;
+  transform: translateY(-10px);
+  opacity: 1;
+    transition: .3s linear;
+  animation: odsoky 1s ease-in-out infinite  alternate;
+}
+
+.tooltip::after {
+  content: " ";
+  width: 0;
+  height: 0;
+  
+  border-style: solid;
+  border-width: 12px 12.5px 0 12.5px;
+  border-color: #333 transparent transparent transparent;
+
+  position: absolute;
+  /*left: 40%;*/
+
+}
+
+.card-karakter .tooltip {
+ 	top:80%; 
+ 	left: 0; 
+}
+
+.card-karakter .tooltip::after{
+  top:-5%;
+  left:40%;
+  transform: rotate(180deg);
+}
+
+/*-----------------game-------------------*/
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  /*position: fixed;*/
+  padding: 0;
+  margin: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+#mazeContainer {
+  transition-property: opacity;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+  top: 75px;
+  opacity: 0;
+  display: inline-block;
+  background-color: black;/*rgb(17, 32, 49, 0.5)*/
+  margin: auto;
+}
+#mazeContainer #mazeCanvas {
+  margin: 0;
+  display: block;
+  border: solid 1px black;
+}
+
+input,
+select {
+  transition-property: background-color opacity;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  cursor: pointer;
+  background-color: rgba(255, 215, 0, 0.9); /*rgb(110, 133, 178, 0.5);*/
+  height: 35px;
+  width: 130px;
+  /*padding: 10px;*/
+  border: none;
+  border-radius: 5px;
+  color: white;
+  display: inline-block;
+  font-size: 17px;
+  text-align: center;
+  text-decoration: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+input:hover,
+select:hover {
+  background-color: rgb(24, 90, 219, 0.8);
+  border: none;
+}
+input:active,
+select:active {
+  background-color: whitesmoke;
+}
+input:focus,
+select:focus {
+  outline: none;
+}
+
+.custom-select {
+  display: inline-block;
+}
+.custom-select select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAh0lEQVQ4T93TMQrCUAzG8V9x8QziiYSuXdzFC7h4AcELOPQAdXYovZCHEATlgQV5GFTe1ozJlz/kS1IpjKqw3wQBVyy++JI0y1GTe7DCBbMAckeNIQKk/BanALBB+16LtnDELoMcsM/BESDlz2heDR3WePwKSLo5eoxz3z6NNcFD+vu3ij14Aqz/DxGbKB7CAAAAAElFTkSuQmCC");
+  background-repeat: no-repeat;
+  background-position: 110px center;
+}
+
+#Message-Container {
+  visibility: hidden;
+  color: white;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+#Message-Container #message {
+  text-align: left;
+  width: 500px;
+  height: 300px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -150px;
+  margin-top: -150px;
+}
+
+/*#Message-Container #message p {
+  text-align: left;
+}
+*/
+#page {
+  font-family: "Segoe UI", Arial, sans-serif;
+  text-align: center;
+  height: auto;
+  width: auto;
+  margin: auto;
+}
+#page #menu {
+  margin: auto;
+  padding: 10px;
+  height: 65px;
+  box-sizing: border-box;
+}
+#page #menu h1 {
+  margin: 0;
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 3.2rem;
+}
+#page #view {
+  position: absolute;
+  top: 80px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: auto;
+}
+
+.border {
+  border: 1px #0000FF solid !important; 
+  border-radius: 5px;
+}
+
+#gradient {
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  color: #fff;
+  background: linear-gradient(-45deg, #000000, #000000, #000000, #000000);
+  background-size: 400% 400%;
+  -webkit-animation: Gradient 15s ease infinite;
+          animation: Gradient 15s ease infinite;
+}
+
+.wrapper {
+  height: 1.5em;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.marquee {
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  animation: marquee 20s linear infinite;
+}
+
+.marquee p {
+  color: white;
+  display: inline-block;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+
+/*---------------Pop Up Pilih Karakter------------------*/
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+	position: relative;
+	display: contents;
+  background-color: transparent;
+  margin: 10% auto; /* 15% from the top and centered */
+  padding: 20px;
+  /*border: 1px solid black;*/
+  border-radius: 20px;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.modal-content.modal-about {
+  background-color: rgba(224, 224, 224, 0.8);
+  margin-top: 4em;
+  position: fixed;
+  height: 85vh;
+  overflow: scroll;
+  left: 10%;
+}
+
+
+.card-about {
+  /*border-radius: 10px;*/
+  height: 100%;
+  overflow-y: scroll;
+
+}
+
+
+
+.modal-content.modal-about, .card-about::-webkit-scrollbar { 
+    display: none;
+}
+
+.modal-about {
+  overflow-x: hidden !important;
+  overflow-y: hidden !important;
+}
+
+.modal-content.modal-about, .card-about {
+  -ms-overflow-style: none;  /* IE dan Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.close-about {
+  position: absolute;
+  top: 0.3em;
+  right: 1em;
+}
+
+@-webkit-keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 400px) {
+  input, select {
+    width: 120px;
+  }
+}
+
+
+
+@media (max-width: 500px) {
+	.login, .register {
+		font-size: 1.5rem;
+	}
+
+  #start {
+    margin-left: -85px;
+  }
+
+}
+
+@media (max-width: 620px) {
+		.kembali, .user-kembali {
+		position: absolute;
+    left: 50%;
+    z-index: 100;
+		top: 92vh;
+    font-size: 1.5rem;
+	}
+
+  .login-home, .login-about {
+    font-size: 1.5rem;
+  }
+
+  .bg img {
+    width: 200px;
+  }
+
+}
+
+@media (max-width: 574px) {
+		.card-group {
+			margin-top: -10em;
+		}
+
+		.karakter-kembali {
+			display: none;
+			font-size: 1.3rem;
+			border: 2px solid #2C3E50 ;
+			border-radius: 7px;
+			background-color: #2C3E50;
+			padding: 0.2em;
+			position: absolute;
+			/*margin-top: 23em;*/
+
+	}
+
+	.karakter-kembali:hover {
+			background-color: #E74C3C;
+			color: #e0e0e0;
+			border: 2px solid #E74C3C;
+	}
+
+	.karakter-kembali2 {
+		visibility: visible;
+		z-index: 10;
+		font-size: 1.3rem;
+		border: 2px solid #2C3E50 ;
+		border-radius: 7px;
+		background-color: #2C3E50;
+		padding: 0.2em;
+		color: #E74C3C;
+		position: fixed;
+		bottom: 2em;
+		
+	}
+
+   .modal-about  h3 {
+    font-size: 1.2rem;
+    margin-top: 1.5em;
+  }
+
+  .tombol-start {
+    font-size: 1rem;
+  }
+
+}
+
+@media (max-device-width: 477px) {
+  #logout {
+    position: fixed;
+    z-index: 100;
+    left: 45%;
+    bottom: 2em;
+  }
+
+  .kotak-karakter {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    margin-right: 8em;
+  }
+
+  .modal-content.game {
+    width: 60%;
+
+  }
+
+
+  .card-karakter {
+    width: 200%;
+  }
+}
+
+@media (max-height: 600px) {
+  .kotak-login {
+    margin-top: -2em;
+    height: 70vh;
+  }
+  .kotak-login h3 {
+    /*margin-top: -0.3em;*/
+  }
+
+  form .form-outline {
+    margin-top: -1em;
+  }
+
+
+}
+
+@media (max-height: 605px) {
+     .card-register {
+    margin-top: -1em;
+  }
+
+}
+
+@media (max-height: 639px) and (max-width: 620px) {
+      .kotak-register {
+    margin-top: -2em;
+    height: 70vh;
+  }
+
+  .register-kembali {
+    top: 90vh;
+  }
+
+}
+
+h2 {
+  font-size: 10rem;
+  color: red;
+}
+
+
+/*HEX
+#e0e0e0
+#f5f5f5
+#b0bec5
+#ffa726
+#ffc107
+#64b5f6*/
