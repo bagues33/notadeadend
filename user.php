@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="asset/css/style.css">
     <title>User</title>
   </head>
-  <body onload="fokus()">
+  <body onload="fokus()" onkeydown="tombolPutih(); tombolBiru()">
             <video controls autoplay loop>
                 <source src="asset/video/01_Opening_NEW_02.mp4" type="video/mp4">
                 <source src="mov_bbb.ogg" type="video/ogg">
@@ -25,7 +25,7 @@
               <i class="fa fa-home"> <span>Home</span> </i>
            </div>
           </a>
-          <a class="fokus user-kembali" href="index.php">
+          <a id="back" class="fokus user-kembali" href="index.php">
             <div class="h-100 d-flex justify-content-center align-items-start">
               <i class="fa fa-arrow-left"> <span>Back</span> </i>
             </div>

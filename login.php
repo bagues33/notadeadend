@@ -89,7 +89,7 @@ $tanggal= mktime(date("m"),date("d"),date("Y"));
     <link rel="stylesheet" href="asset/css/style.css">
     <title>Login</title>
   </head>
-  <body onload="fokus()">
+  <body onload="fokus()" onkeydown="tombolPutih(); tombolBiru()">
           <video controls autoplay loop>
             <source src="asset/video/01_Opening_NEW_02.mp4" type="video/mp4">
             <!-- <source src="mov_bbb.ogg" type="video/ogg"> -->
@@ -102,7 +102,7 @@ $tanggal= mktime(date("m"),date("d"),date("Y"));
           <div class="row d-flex justify-content-center align-items-center mb-5">
             <div class="h-100 d-flex flex-row justify-content-between align-items-start">
                 <a id="home-login" class="login-home fokus" href="index.php"><i class="fa fa-home"> <span>Home</span></i></a>
-                <a class="kembali fokus" href="user.php"><i class="fa fa-arrow-left"> <span>Back</span></i></a>
+                <a id="back" class="kembali fokus" href="user.php"><i class="fa fa-arrow-left"> <span>Back</span></i></a>
                 <a class="login-about fokus" href="#" onclick="about()"><i class="fa fa-address-card"> <span>About</span></i></a>
             </div>
              <div class="h-100 d-flex justify-content-center align-items-center tengah">
@@ -120,7 +120,7 @@ $tanggal= mktime(date("m"),date("d"),date("Y"));
                       <p style="color: red; margin-top: -2em;">Username / password salah!</p>
                     <?php } ?>
                     <div class="form-outline form-white mb-4">
-                      <input id="login" type="text" id="username" name="username" class="form-control form-control-lg fokus" required />
+                      <input type="text" id="username" name="username" class="form-control form-control-lg fokus" required />
                       <label class="form-label" for="typeEmailX">Username</label>
                     </div>
 
@@ -209,9 +209,13 @@ $tanggal= mktime(date("m"),date("d"),date("Y"));
            // window.setTimeout(function () { 
           // document.getElementById('login').focus(); 
       // }, 1000); 
-       setTimeout(function(){
-           document.getElementById("home-login").focus();
-      }, 1000);
+      //  setTimeout(function(){
+      //      document.getElementById("username").focus();
+      // }, 1000);
+
+      document.addEventListener("DOMContentLoaded", function(){
+          document.getElementById("username").focus();
+});
 
    // document.onkeydown = function(e){
    //           var isi;

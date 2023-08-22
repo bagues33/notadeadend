@@ -110,7 +110,7 @@ if( !isset($_SESSION["login"]) ) {
       		      <option value="25">Medium</option>
                 <!-- <option value="35">Hard</option> -->
                          <option value="10">Easy</option>
-                          <!-- <option value="38">Extreme</option>                                  -->
+                          <!-- <option value="38">Extreme</option>-->
               </select>
             </div>
             <a href="logout.php"><input id="logout" type="button" value="Logout" /></a>
@@ -243,6 +243,7 @@ if( !isset($_SESSION["login"]) ) {
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js'></script>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script> -->
     <script  src="asset/js/script.js"></script>
+    
 
 </body>
 

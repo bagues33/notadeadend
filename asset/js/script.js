@@ -90,28 +90,40 @@ function displayrintangan(moves) {
       var htmlrintang2 = 
            "<video controls autoplay loop>" +
               "<source src=\"asset/video/04_Bus.mp4\" type=\"video/mp4\">"+
-            "</video>";
-          
+            "</video>"+
+            "<div id=\"message\">"+
+             "<input id=\"okBtn\" class=\"okBtn\" type=\"button\" onclick=\"toggleVisablity('Message-Container')\" value=\"Warning!\" />"+
+            "</div>";
+      
         var htmlrintang3 = 
            "<video controls autoplay loop>" +
            "<source src=\"asset/video/06_Badai.mp4\" type=\"video/mp4\">"+
-          "</video>";
-       
+          "</video>"+
+            "<div id=\"message\">"+
+             "<input id=\"okBtn\" class=\"okBtn\" type=\"button\" onclick=\"toggleVisablity('Message-Container')\" value=\"Warning!\" />"+
+            "</div>";
+        
         var htmlrintang4 = 
            "<video controls autoplay loop>" +
            "<source src=\"asset/video/05_Kereta.mp4\" type=\"video/mp4\">"+
-          "</video>";
-         
+          "</video>"+
+            "<div id=\"message\">"+
+             "<input id=\"okBtn\" class=\"okBtn\" type=\"button\" onclick=\"toggleVisablity('Message-Container')\" value=\"Warning!\" />"+
+            "</div>";
+        
         var htmlrintang5 = 
            "<video controls autoplay loop>" +
            "<source src=\"asset/video/08_Laut.mp4\" type=\"video/mp4\">"+
-          "</video>";
-        
+          "</video>"+
+            "<div id=\"message\">"+
+             "<input id=\"okBtn\" class=\"okBtn\" type=\"button\" onclick=\"toggleVisablity('Message-Container')\" value=\"Warning!\" />"+
+            "</div>";
+         
         var htmlrintang6 = 
            "<video controls autoplay loop>" +
            "<source src=\"asset/video/07_Militer.mp4\" type=\"video/mp4\">"+
           "</video>";
-       
+        
         var htmlrintang7 = 
            "<video controls autoplay loop>" +
            "<source src=\"asset/video/11_Polisi_VS_Pengungsi.mp4\" type=\"video/mp4\">"+
@@ -121,7 +133,7 @@ function displayrintangan(moves) {
            "<video controls autoplay loop>" +
            "<source src=\"asset/video/09_KawatBerduri.mp4\" type=\"video/mp4\">"+
           "</video>";
-        
+         
            var htmlrintang9 = 
            "<video controls autoplay loop>" +
            "<source src=\"asset/video/10_Menyeberang_hutan.mp4\" type=\"video/mp4\">"+
@@ -821,7 +833,7 @@ let image6 =  document.getElementById("gambar6");
 window.setTimeout(function () { 
     image1.focus(); 
     // opening.focus();
-}, 1000); 
+}, 3000); 
 
 
 
@@ -841,10 +853,10 @@ $(document).keydown(
 
 function tombol(){
     /* tombol F11 */
-    if(event.keyCode == 27) {
+    if(event.keyCode == 113) {
       event.preventDefault()
       document.getElementById('logout').click();
-    } else if (event.keyCode == 32) {
+    } else if (event.keyCode == 121) {
       event.preventDefault()
       document.getElementById('startMazeBtn').click();
     } 
@@ -1199,16 +1211,22 @@ function fokus() {
 
     }
 );
+       // var tombolcoin = document.getElementById('insertcoin');
+       // tombolcoin.disable = false;
 
 }
 
 function cool() {
   // document.getElementById('okBtn').focus();
   setTimeout(function(){ 
-    location.reload(); }, 5000);
+    window.location='logout.php'; }, 5000);
 }
 
   function startWebCam() {
+    navigator.getUserMedia = ( navigator.getUserMedia       ||
+                           navigator.webkitGetUserMedia ||
+                           navigator.mozGetUserMedia    ||
+                           navigator.msGetUserMedia );
       if (navigator.mediaDevices.getUserMedia) {
         navigator.mediaDevices.getUserMedia({ video: true })
             .then(function (stream) {
@@ -1251,16 +1269,17 @@ function cool() {
     var video = document.getElementById('video');
 
     // Trigger photo take
-    document.getElementById("snap").addEventListener("click", function() {
-        context.drawImage(video, 0, 0, 425, 300);
-    });
+    // document.getElementById("snap").addEventListener("click", function() {
+    //     context.drawImage(video, 0, 0, 425, 300);
+    // });
 
     document.getElementById("save").addEventListener("click", function() {
+           context.drawImage(video, 0, 0, 100, 90);
             var canvas = document.getElementById('canvas');
             var dataURL = canvas.toDataURL();
             $.ajax({
               type: "POST",
-              url: "../game-labirin/simpan.php", // ini adalah fungsi file php simpan gambar
+              url: "../demo-game-labirin/simpan.php", // ini adalah fungsi file php simpan gambar
               data: {
                  imgBase64: dataURL
               }
@@ -1278,11 +1297,44 @@ function cool() {
 }
 
 function saveFoto() {
-     if(event.keyCode == 113) {
-      event.preventDefault()
-      document.getElementById('snap').click();
-    } else if (event.keyCode == 121) {
+    if (event.keyCode == 121) {
       event.preventDefault()
       document.getElementById('save').click();
     } 
 }
+
+function insertCoin(){
+    /* tombol F11 */
+    var insertcoin = document.getElementById('start');
+
+    if(event.keyCode == 52) {
+      ///event.preventDefault()
+      window.location = 'user.php';
+      // alert('halo');
+      
+    } 
+  }
+
+  function tombolPutih() {
+     if(event.keyCode == 113) {
+      event.preventDefault()
+      about();
+      // alert('halo');
+    }
+}
+
+function tombolBiru() {
+    if (event.keyCode == 121) {
+      event.preventDefault()
+      document.getElementById('back').click();
+    } 
+}
+
+function okBtn() {
+   if(event.keyCode == 13) {
+      event.preventDefault()
+      document.getElementById('okBtn').click();
+    } 
+}
+
+  

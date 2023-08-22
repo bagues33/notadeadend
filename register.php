@@ -25,6 +25,8 @@ if (isset($_POST["register"])) {
          window.location='login.php';
       </script>";
 
+      unset($_SESSION['gambar']);
+
   } else {
     echo mysqli_error($koneksi);
   }
@@ -53,7 +55,7 @@ $tanggal= mktime(date("m"),date("d"),date("Y"));
     <link rel="stylesheet" href="asset/css/style.css">
     <title>Register</title>
   </head>
-  <body onload="fokus(); capture()" onkeydown="saveFoto()">
+  <body onload="fokus(); capture()" onkeydown="saveFoto(); tombolPutih()">
      <video controls autoplay loop>
           <source src="asset/video/01_Opening_NEW_02.mp4" type="video/mp4">
           <!-- <source src="mov_bbb.ogg" type="video/ogg"> -->
@@ -66,7 +68,7 @@ $tanggal= mktime(date("m"),date("d"),date("Y"));
           <div class="row d-flex justify-content-center align-items-center mt-3">
             <div class="h-100 d-flex flex-row justify-content-between align-items-start">
                 <a id="register-home" class="login-home fokus" href="index.php"><i class="fa fa-home"> <span>Home</span></i></a>
-                <a class="kembali fokus" href="user.php"><i class="fa fa-arrow-left  register-kembali"> <span>Back</span></i></a>
+                <a id="back" class="kembali fokus" href="user.php"><i class="fa fa-arrow-left  register-kembali"> <span>Back</span></i></a>
                 <a class="login-about fokus" href="#" onclick="about()"><i class="fa fa-address-card"> <span>About</span></i></a>
             </div>
             <!--  <div class="h-100 d-flex justify-content-center align-items-center tengah">
@@ -83,7 +85,7 @@ $tanggal= mktime(date("m"),date("d"),date("Y"));
                       <label class="form-label">Username</label>
                     </div>
                     <div class="form-outline form-white mb-4">
-                      <input type="email" id="exampleInputEmail1" name="email" class="form-control form-control-lg fokus" aria-describedby="emailHelp" required />
+                      <input type="text" id="exampleInputEmail1" name="email" class="form-control form-control-lg fokus" aria-describedby="emailHelp" required />
                       <label class="form-label" for="typeEmailX">Email</label>
                     </div>
                     <div class="form-outline form-white mb-4">
@@ -95,9 +97,10 @@ $tanggal= mktime(date("m"),date("d"),date("Y"));
                       <label class="form-label" for="typePasswordX">Repeat Password</label>
                     </div>
                     <!-- <a class="link-danger fs-3 fokus" onclick="startWebCam()" href="#"><i class="fa fa-camera"></i></a> -->
-                     <!-- <a class="link-danger fs-3 fokus" onclick="modalFoto()" href="#"><i class="fa fa-camera"></i></a> -->
-                    <label for="formFileSm" class="form-label text-white mb-3">Insert your portrait</label>
-                      <input class="form-control form-control-sm fokus" id="gambar" name="gambar" type="file" />
+                    <canvas style="margin-top: 10px; margin-bottom: -15px; border: 2px solid whitesmoke;" id="canvas" width="100" height="90"></canvas>
+                     <a class="link-danger fs-3 fokus" onclick="modalFoto()" href="#"><i class="fa fa-camera"></i></a>
+                    <label for="formFileSm" class="form-label text-white mb-3">Take your photo</label>
+                      <!-- <input class="form-control form-control-sm fokus" id="gambar" name="gambar" type="file" /> -->
                       
                      <input type="hidden" name="tanggal" value="<?php echo date('d-M-Y', $tanggal) ?> ">
                     
@@ -163,17 +166,18 @@ $tanggal= mktime(date("m"),date("d"),date("Y"));
                 <div class="d-flex justify-content-center align-items-center shadow-lg modal-content modal-about">
 
                    <span onclick="close_button()" class="close close-about">&times;</span>
-            
+                    
+                    <p class="text-danger fs-5">Take your pictures</p>
                     <video id="video" autoplay>
                       <!-- <embed src="http://localhost:8081"></embed> -->
                        <!-- <source src="http://192.168.100.56:8081" type="video/mp4"> -->
                         <!-- <source src="movie.ogg" type="video/ogg"> -->
                     </video>
-                    <button id="snap">Ambil Gambar</button>
+                    <!-- <button class="btn btn-warning" id="snap">Press button</button> -->
 
-                    <canvas id="canvas" width="425" height="300"></canvas>
+                    <!-- <canvas id="canvas" width="425" height="300"></canvas> -->
                       <!-- <img src="" id="gambare"> -->
-                    <button id="save">Simpan Gambar</button>
+                    <span class="mt-5">Press button <button style="display: none;" class="btn btn-light" id="save"></button></span><i class="fa fa-circle fa-2x text-light"></i>
                     
                 </div>
                   
@@ -190,9 +194,12 @@ $tanggal= mktime(date("m"),date("d"),date("Y"));
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
     -->
     <script>
-             window.setTimeout(function () { 
-                document.getElementById('register-home').focus(); 
-              }, 1000); 
+             // window.setTimeout(function () { 
+                // document.getElementById('username').focus(); 
+              // }, 1000); 
+               document.addEventListener("DOMContentLoaded", function(){
+          document.getElementById("username").focus();
+});
 
         //        document.onkeydown = function(e){
         //      var isi;

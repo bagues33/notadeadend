@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="asset/css/style.css">
     <title>Home</title>
   </head>
-  <body onload="fokus()">
+  <body onload="fokus()" onkeydown="insertCoin(); tombolPutih()">
           <video controls autoplay loop muted>
             <source src="asset/video/01_Opening_Trailer_NEW.mp4" type="video/mp4">
                 <!-- <source src="" type="video/ogg"> -->
@@ -27,14 +27,12 @@
                   <i class="fa fa-home"> <span>Home</span> </i>
                </div>
               </a>
-           
-              <a id="start" class="fokus tombol-start" href="user.php">
+              <a id="start" class="fokus tombol-start" href="#">
                 <div class="h-100 w-100 d-flex justify-content-center align-items-center">
-                    <button class="btn btn-outline-warning" role="button">Insert Coin</button>
+                    <button id="insertcoin" class="btn btn-outline-warning" type="button">Insert Coin</button>
                   <!-- <button type="button" class="btn btn-warning tombol-start">Warning</button> -->
                 </div>
               </a>
-          
              <a  class="fokus about " href="#" onclick="about()">
               <div class="h-100 d-flex justify-content-end align-items-start">
                 <i class="fa fa-address-card"> <span>About</span> </i>

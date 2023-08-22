@@ -23,18 +23,24 @@ function registrasi($data) {
 	$password2 = mysqli_real_escape_string($koneksi, $data["password2"]);
 	$tgl = mysqli_real_escape_string($koneksi, $data["tanggal"]);
 
-	$gambar = upload();
-	if (!$gambar) {
-		return false;
-	}
+	// $gambar = upload();
+	// if (!$gambar) {
+	// 	return false;
+	// }
 
-if ($gambar) {
+// if ($gambar) {
+// 		$image = $gambar;
+// 	} else {
+// 		$image = 'profil.jpg';
+// 	}
+
+	$gambar = $_SESSION['gambar'];
+
+	if ($gambar) {
 		$image = $gambar;
 	} else {
 		$image = 'profil.jpg';
 	}
-
-	// $gambar = $_SESSION['gambar'];
 
 	//cek username sudah ada atau belum
 	$result = mysqli_query($koneksi, "SELECT username FROM user WHERE username = '$username'");
@@ -53,6 +59,8 @@ if ($gambar) {
 	//enskripsi password
 	$password = password_hash($password, PASSWORD_DEFAULT);
 
+	
+	
 	//tambahkan user baru ke database
 	mysqli_query($koneksi, "INSERT INTO user VALUES('','$username','$email','$password','$tgl','$image')");
 

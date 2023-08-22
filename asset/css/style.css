@@ -389,7 +389,7 @@ form input, select {
 }
 
 .kotak-register {
-  height: 34em !important;
+  height: 36em !important;
 }
 
 .kotak-login {
@@ -580,6 +580,10 @@ select:focus {
   left: 50%;
   margin-left: -150px;
   margin-top: -150px;
+}
+
+.okBtn {
+  display: none;
 }
 
 /*#Message-Container #message p {
